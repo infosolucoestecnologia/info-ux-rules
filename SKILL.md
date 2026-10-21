@@ -32,7 +32,7 @@ UX/UI rules for the Info Soluções systems. One file, organized by topic. Apply
 
 ## Visual direction: Dashboard V2 (owner dashboard)
 
-Goal: premium, sophisticated, dark theme, not "newspaper-like", not neon.
+Goal for the dark theme: premium, sophisticated, not "newspaper-like", not neon. Light is the default theme; this section describes the dark variant.
 
 - Base: near-black neutral background without a strong blue tint (for example `#0A0A0B` or `#0D0D10`), not saturated navy.
 - Surfaces: 2 to 3 tones above the background (for example `#0A0A0B` background, `#131316` card, `#1C1C21` popover). No gradients, no glow.
