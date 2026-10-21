@@ -20,6 +20,10 @@ UX/UI rules for the Info Soluções systems. One file, organized by topic. Apply
 - **Do not repeat what does not vary.** Information that is identical in every row or card (the same priority "Medium", the same tag "Cold", the same channel icon) must not be visible. Show it only when the value is an exception.
 - **One navigation, one search.** Never duplicate the same destinations in the sidebar, top tabs and bottom bar. Never put a search icon in the header plus a search field below it.
 - **Nothing essential lives only in hover.** Actions, information and state must be reachable by touch and by keyboard.
+- **Explanation is on demand, not permanent.** **Decision:** text that is neither data nor an action ("this is for...", "remember that...", context notes, "how this works") must not sit permanently in the body of the screen.
+  - Pattern: a small "ⓘ" or "?" next to the relevant title or field. Clicking it (not hover only, it must work on touch) reveals the text in a popover or expands it inline.
+  - Exception: one line of guidance that is central to the purpose of the screen (an empty state, an initial usage instruction) may stay visible. Never more than one sentence per block or section.
+  - When reviewing an existing screen, convert any fixed explanatory text longer than one sentence, or more than one paragraph per section, to this pattern.
 - **Color has a function.** Green positive/paid, red negative/overdue, amber pending. Strong color is for what still needs action; resolved items are neutral.
 - **Detect capability, not screen width,** for touch and hover (`pointer`, `hover` media queries).
 - **If everything has an alert, nothing has one.** A red dot without a number on several menu items at once means nothing.
@@ -32,7 +36,7 @@ UX/UI rules for the Info Soluções systems. One file, organized by topic. Apply
 
 ## Visual direction: Dashboard V2 (owner dashboard)
 
-Goal for the dark theme: premium, sophisticated, not "newspaper-like", not neon. Light is the default theme; this section describes the dark variant.
+Goal: premium, sophisticated, dark theme, not "newspaper-like", not neon.
 
 - Base: near-black neutral background without a strong blue tint (for example `#0A0A0B` or `#0D0D10`), not saturated navy.
 - Surfaces: 2 to 3 tones above the background (for example `#0A0A0B` background, `#131316` card, `#1C1C21` popover). No gradients, no glow.
@@ -40,6 +44,12 @@ Goal for the dark theme: premium, sophisticated, not "newspaper-like", not neon.
 - Maximum 2 to 3 colored charts per screen, each in its own card. Never several mini-charts competing side by side.
 - Maximum 3 to 4 colors per chart (never a pie with 6+ differently colored slices). Prefer desaturated tones over pure neon.
 - Avoid: decorative gradients, glow on numbers or borders, several "No data" empty states visible at once, more than one KPI with the same visual weight.
+
+## Dashboard structure: how not to look like a report
+
+- A dashboard with a highlighted KPI must: (1) show the value with its percentage change versus the previous period in the same card, not the raw number alone; (2) show secondary KPIs as smaller sibling cards of the main one, never as running text below it; (3) put the period/filter control as a group of "pill" buttons in the top right corner of the section, not as loose text.
+- Report signal (anti-pattern, avoid): a big number followed by a paragraph explaining the context. Context must come as a second visual datum: a change badge, a side-by-side comparison, a mini chart.
+- **Decision:** when using an external visual reference as inspiration, copy the organization (card hierarchy, filter position, the way variation is shown) and always replace the reference palette with the single brand accent already defined. Never import the color of an external reference.
 
 ## Hierarchy, shadow, spacing and grid
 
@@ -210,6 +220,7 @@ Screens already reviewed with these rules:
 - **Tickets (Atendimentos) in Sistema Info:** removed triplicated navigation, removed "Medium"/"WhatsApp" repeated on every row, fixed contrast of "Resolved" vs "New".
 - **Opportunities (kanban) in Sistema Info:** fixed misaligned card grid, removed "NO REGISTRATION"/"Cold" repeated on every card, removed button glow, fixed two-direction scrolling.
 - **Knowledge in Sistema Info:** side categories became horizontal chips on mobile, aligned search and filter buttons.
+- When "Explanation is on demand" or "Dashboard structure" is applied to a real screen, add an entry here in the same format (screen: what changed).
 
 ## Sources and confidence
 
